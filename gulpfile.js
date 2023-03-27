@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import del from 'del';
 import styles from './gulp/compileStyles.mjs';
-import {copy, copyImages, copySvg, fonts} from './gulp/copyAssets.mjs';
+import {copy, copyImages, copySvg, font2woff, font2woff2} from './gulp/copyAssets.mjs';
 import js from './gulp/compileScripts.mjs';
 import {optimizeSvg, sprite, createWebp, optimizeImages} from './gulp/optimizeImages.mjs';
 import pug from './gulp/compilePug.mjs';
@@ -42,6 +42,6 @@ const build = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, pug, op
 const dev = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, pug, optimizeSvg, optimizeImages), syncServer);
 const start = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, pug), syncServer);
 const nomin = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, pug, optimizeSvg, optimizeImages));
-const font2woff = gulp.series(clean, fonts);
+const fontsconvert = gulp.series(font2woff, font2woff2);
 
-export {createWebp as webp, build, start, dev, nomin};
+export {createWebp as webp, build, start, dev, nomin, fontsconvert};

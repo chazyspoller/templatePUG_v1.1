@@ -13,18 +13,21 @@ const copy = () =>
     })
     .pipe(gulp.dest('build'));
 
-const fonts = () =>
+const font2woff = () =>
   gulp
     .src(['source/fonts/*.ttf'], {
       base: 'source',
     })
     .pipe(ttf2woff())
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('source'));
+
+const font2woff2 = () =>
+  gulp
     .src(['source/fonts/*.ttf'], {
       base: 'source',
     })
     .pipe(ttf2woff2())
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('source'));
 
 
-export {copy, copyImages, copySvg, fonts};
+export {copy, copyImages, copySvg, font2woff, font2woff2};

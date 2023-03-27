@@ -15,7 +15,8 @@
     "start": "cross-env NODE_ENV=development gulp start",
     "nomin": "cross-env NODE_ENV=development gulp nomin",
     "imagemin": "gulp imagemin",
-    "webp": "gulp webp"
+    "webp": "gulp webp",
+    "fontsconvert": "gulp fontsconvert"
   },
   "editorconfig-cli": [
     "*.json",
